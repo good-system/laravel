@@ -40,6 +40,10 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
+                            @if(view()->exists('good-system::partials.o365auth-link'))
+                                @include('good-system::partials.o365auth-link')
+                            @endif
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
